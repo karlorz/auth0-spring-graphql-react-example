@@ -1,6 +1,6 @@
 # Building a GraphQL API with Spring for GraphQL
 
-This repository contains a Spring Boot GraphQL demo, with an API server application and a React client for displaying a list of companies. Please read [How to Build a GraphQL API with Spring Boot](https://auth0.com/blog/how-to-build-a-graphql-api-with-spring-boot/) to see the tutorial used to create this example.
+This repository contains a Spring Boot + GraphQL demo, with an API server application and a React client for displaying a list of companies. Please read [How to Build a GraphQL API with Spring Boot](https://auth0.com/blog/how-to-build-a-graphql-api-with-spring-boot/) to see the tutorial used to create this example.
 
 **Prerequisites:**
 
