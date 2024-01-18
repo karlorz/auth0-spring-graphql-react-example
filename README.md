@@ -1,6 +1,6 @@
 # Building a GraphQL API with Spring for GraphQL
 
-This repository contains a GraphQL demo, with an API server application and a React client for displaying a list of companies. The tutorial for creating this example is available on [Okta Developer Blog]().
+This repository contains a GraphQL demo, with an API server application and a React client for displaying a list of companies. The tutorial for creating this example is available at [How to Build a GraphQL API with Spring Boot](https://auth0.com/blog/how-to-build-a-graphql-api-with-spring-boot/).
 
 **Prerequisites:**
 
@@ -203,7 +203,7 @@ Go to http://localhost:3000 and you should be redirected to the Auth0 universal 
 
 ## Help
 
-Please post any questions as comments on the [blog post](), or on the [Okta Developer Forums](https://devforum.okta.com/).
+Please post any questions as comments on the [blog post](https://auth0.com/blog/how-to-build-a-graphql-api-with-spring-boot/), or on the [Okta Developer Forums](https://devforum.okta.com/).
 
 ## License
 
