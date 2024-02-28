@@ -70,5 +70,99 @@ export const CompanyApi = {
       throw new Error('Unknown error, please contact the administrator');
     }
   },
+  createCompany: async (companyData: CompanyDTO) => {
+    try {
+      const response = await backendAPI.post('/graphql', {
+        query: `
+          mutation CreateCompany($input: CompanyInput!) {
+            createCompany(input: $input) {
+              name,
+              SIC,
+              id,
+              companyNumber,
+              category,
+              status,
+              controlledBy {
+                name
+              }
+            }
+          }
+        `,
+        variables: {
+          input: companyData,
+        },
+      });
+      return response.data.data.createCompany as CompanyDTO;
+    } catch (error) {
+      console.log('handle create company error', error);
+      if (error instanceof AxiosError) {
+        let axiosError = error as AxiosError;
+        if (axiosError.response?.data) {
+          throw new Error(axiosError.response?.data as string);
+        }
+      }
+      throw new Error('Unknown error, please contact the administrator');
+    }
+  },
 
+  updateCompany: async (companyId: string, companyData: CompanyDTO) => {
+    try {
+      const response = await backendAPI.post('/graphql', {
+        query: `
+          mutation UpdateCompany($id: ID!, $input: CompanyInput!) {
+            updateCompany(id: $id, input: $input) {
+              name,
+              SIC,
+              id,
+              companyNumber,
+              category,
+              status,
+              controlledBy {
+                name
+              }
+            }
+          }
+        `,
+        variables: {
+          id: companyId,
+          input: companyData,
+        },
+      });
+      return response.data.data.updateCompany as CompanyDTO;
+    } catch (error) {
+      console.log('handle update company error', error);
+      if (error instanceof AxiosError) {
+        let axiosError = error as AxiosError;
+        if (axiosError.response?.data) {
+          throw new Error(axiosError.response?.data as string);
+        }
+      }
+      throw new Error('Unknown error, please contact the administrator');
+    }
+  },
+
+  deleteCompany: async (companyId: string) => {
+    try {
+      const response = await backendAPI.post('/graphql', {
+        query: `
+          mutation DeleteCompany($id: ID!) {
+            deleteCompany(id: $id)
+          }
+        `,
+        variables: {
+          id: companyId,
+        },
+      });
+      return response.data.data.deleteCompany as boolean;
+    } catch (error) {
+      console.log('handle delete company error', error);
+      if (error instanceof AxiosError) {
+        let axiosError = error as AxiosError;
+        if (axiosError.response?.data) {
+          throw new Error(axiosError.response?.data as string);
+        }
+      }
+      throw new Error('Unknown error, please contact the administrator');
+    }
+  },
 };

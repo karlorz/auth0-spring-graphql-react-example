@@ -63,6 +63,18 @@ const CompanyTableContainer = (props: CompanyTableProperties) => {
     }
   });
 
+  const handleAdd = (company) => {
+    // call API 
+  }
+  
+  const handleEdit = (company) => {
+    // call API
+  }
+  
+  const handleDelete = (id) => {
+    // call API
+  }
+
   return (
     <>
       {loadingList && <Loader />}
@@ -75,6 +87,9 @@ const CompanyTableContainer = (props: CompanyTableProperties) => {
           rows={companyData}
           columns={columns}
           onPageChange={onPageChange}
+          // onAdd={handleAdd}
+          // onRowUpdate={handleEdit}
+          // onRowDelete={handleDelete}
         ></CompanyTable>
       )}
     </>

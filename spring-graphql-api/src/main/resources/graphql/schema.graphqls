@@ -33,3 +33,20 @@ type Property {
     district: String
     titleNumber: String
 }
+
+type Mutation {
+  createCompany(input: CompanyInput!): Company!
+  updateCompany(id: ID!, input: CompanyInput!): Company!
+  deleteCompany(id: ID!): Boolean!
+}
+
+input CompanyInput {
+  SIC: String
+  category: String
+  companyNumber: String
+  countryOfOrigin: String
+  incorporationDate: String
+  mortgagesOutstanding: Int
+  name: String
+  status: String
+}
